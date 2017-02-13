@@ -153,6 +153,8 @@ func Label(prefix string, n interface{}) string {
 		fmt.Fprintf(&bf, "(len = %d)", v.Len())
 
 	case reflect.Struct:
+		// Something looks strange
+		// Maybe there is a mistake about this assert expression
 		if v.Kind() == reflect.Struct {
 			fs := []string{}
 			for i := 0; i < v.NumField(); i++ {
